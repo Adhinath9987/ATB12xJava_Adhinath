@@ -11,5 +11,8 @@ public class Reverse_String {
             r = ch + r ;
         }
         System.out.println(r);
+
+        StringBuffer s = "Samiksha";
+        System.out.println(s.reverse());
     }
 }
