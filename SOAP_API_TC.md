@@ -1,3 +1,7 @@
+Test Cases for IsValidISBN10 SOAP API
+
+https://webservices.daehosting.com/services/isbnservice.wso
+
 | Scenario TID | Test Data        | TestCase Description                               | PreCondition             | TestSteps                                   | Expected Result                                     | Actual Result | Steps to Execute                            | Expected Result                                     | Actual Result | Status        | Executed QA Name | Misc (Comments)                    | Priority | Is Automated |
 |--------------|------------------|----------------------------------------------------|---------------------------|----------------------------------------------|----------------------------------------------------|----------------|------------------------------------------------|----------------------------------------------------|----------------|----------------|-------------------|-------------------------------------|----------|---------------|
 | TC001        | 0306406152       | Validate a correct ISBN-10 number                 | API is up and running     | Pass 0306406152 in the sISBN field           | Returns true                                      | -              | Send SOAP request with valid ISBN-10        | `<IsValidISBN10Result>true</IsValidISBN10Result>` | -              | Not Executed  | -                 | Standard valid case                | High     | Yes           |
