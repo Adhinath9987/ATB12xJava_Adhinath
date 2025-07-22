@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "3b68321c-ea24-4cb6-b08f-61b3d79c3644",
+		"name": "Project #1 - SOAP Project ISBN Checker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30661513",
+		"_collection_link": "https://www.postman.com/orbital-module-geoscientist-25088709/atb12x/collection/84zrcj9/project-1-soap-project-isbn-checker?action=share&source=collection_link&creator=30661513"
+	},
+	"item": [
+		{
+			"name": "TC#01- POSITIVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "length",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <IsValidISBN10 xmlns=\"http://webservices.daehosting.com/ISBN\">\r\n            <sISBN>1529005353</sISBN>\r\n        </IsValidISBN10>\r\n    </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webservices.daehosting.com/services/isbnservice.wso",
+					"protocol": "https",
+					"host": [
+						"webservices",
+						"daehosting",
+						"com"
+					],
+					"path": [
+						"services",
+						"isbnservice.wso"
+					]
+				},
+				"description": "This API is basically going to check if the 10 digit book ISBN number is valid or not."
+			},
+			"response": []
+		},
+		{
+			"name": "TC#02- NEGATIVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <IsValidISBN10 xmlns=\"http://webservices.daehosting.com/ISBN\">\r\n            <sISBN>1529005353</sISBN>\r\n        </IsValidISBN10>\r\n    </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webservices.daehosting.com/services/isbnservice.wso",
+					"protocol": "https",
+					"host": [
+						"webservices",
+						"daehosting",
+						"com"
+					],
+					"path": [
+						"services",
+						"isbnservice.wso"
+					]
+				},
+				"description": "This API is basically going to check if the incorrect 10 digit book ISBN number is valid or not."
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
